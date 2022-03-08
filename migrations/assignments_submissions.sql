@@ -14,13 +14,3 @@ CREATE TABLE assignment_submissions (
   duration INTEGER,
   submission_date DATE
 );
-
-
-
-
--- id: A unique identifier
--- name: The name of the assignment
--- content: The written content body of the assignment
--- day: The day that the assignment appears on
--- chapter: The order that the assignment will appear in the day.
--- duration: The average time it takes a student to finish
