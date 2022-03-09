@@ -1,0 +1,18 @@
+SELECT cohorts.name AS cohorts_name, AVG(completed_at-started_at) AS average_assistance_time
+FROM assistance_requests
+JOIN students ON students.id = student_id
+JOIN cohorts ON cohorts.id = cohort_id
+GROUP BY cohorts.name
+ORDER BY average_assistance_time DESC
+LIMIT 1;
+
+
+
+-- THIS METHOD DOES NOT PROVIDE THE NAME OF THE COHORT
+-- SELECT MAX(cohort_avg)
+-- FROM
+-- (SELECT cohorts.name AS cohorts_name, AVG(completed_at-started_at) AS cohort_avg
+-- FROM assistance_requests
+-- JOIN students ON students.id = student_id
+-- JOIN cohorts ON cohorts.id = cohort_id
+-- GROUP BY cohorts.name) as average_assistance_time;
